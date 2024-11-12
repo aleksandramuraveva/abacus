@@ -27,6 +27,7 @@
 
 body {
   background: var(--bg);
+ /* background: #edf7fa;*/
   color: var(--black);
   min-height: 100vh;
   margin-inline: auto;
