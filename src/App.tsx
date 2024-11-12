@@ -27,13 +27,13 @@ const Rod = ({ beadUrl, rodUrl }) => {
   const rodHeight = 400; 
   const beadHeight = 60; 
   const edgeMargin = beadHeight * 0.26; 
+  const bridgePosition = rodHeight / 3.2; 
 
-  
   const [positions, setPositions] = useState([
-    rodHeight - beadHeight + edgeMargin,
-    rodHeight - beadHeight * 1.5 + edgeMargin,
-    rodHeight - beadHeight * 2 + edgeMargin,
-    rodHeight - beadHeight * 2.5 + edgeMargin,
+    rodHeight - beadHeight + edgeMargin, 
+    rodHeight - beadHeight * 1.5 + edgeMargin, 
+    rodHeight - beadHeight * 2 + edgeMargin, 
+    rodHeight - beadHeight * 2.5 + edgeMargin, 
     edgeMargin, 
   ]);
 
@@ -45,11 +45,15 @@ const Rod = ({ beadUrl, rodUrl }) => {
 
     let newPosition = e.clientY - rodRect.top - beadHeight / 2;
 
-    //the bead are within the rod boundaries
+    if (index < 4) {
+      newPosition = Math.max(newPosition, bridgePosition);
+    } else {
+      newPosition = Math.min(newPosition, bridgePosition - beadHeight);
+    }
+
     newPosition = Math.max(newPosition, edgeMargin);
     newPosition = Math.min(newPosition, rodElement.offsetHeight - beadHeight - edgeMargin);
 
-     // beads do not overlap
     for (let i = 0; i < positions.length; i++) {
       if (i !== index) {
         if (Math.abs(newPosition - positions[i]) < minDistance) {
