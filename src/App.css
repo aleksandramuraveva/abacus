@@ -56,6 +56,52 @@ h2 {
   font-weight: 600;
 }
 
+.App {
+  margin-top: 3rem;
+  margin-inline: auto;
+}
+
+.abacus {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.rod {
+  background: green;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  height: 200px;
+  width: 60px; 
+  position: relative; 
+}
+
+.bead-container {
+  cursor: grab; 
+  position: absolute;
+}
+
+.bead {
+  max-width: 60px; 
+  /*height: 60px;*/
+  display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*@media (max-width: 1000px) {
   .container {
     grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
