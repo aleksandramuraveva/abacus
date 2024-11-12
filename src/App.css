@@ -54,6 +54,7 @@ h1 {
 h2 {
   font-weight: 600;
 }
+/*.............................*/
 
 .App {
   margin-top: 3rem;
@@ -88,6 +89,7 @@ h2 {
   /*height: 60px;*/
   display: block;
 }
+/*.......................................*/
 
 /*@media (max-width: 1000px) {
   .container {

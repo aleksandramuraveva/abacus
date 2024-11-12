@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import beadImage from './assets/Bead1.png';
 
 const Bead = ({ position, onMove, beadUrl }) => {
   const handleDrag = (e) => {
-    if (e.clientY === 0) return;
+    if (e.clientY === 0) return; 
 
     onMove(e);
   };
@@ -28,15 +28,27 @@ const Rod = ({ beadUrl }) => {
   const handleMove = (index, e) => {
     const rodElement = e.target.closest('.rod');
     const rodRect = rodElement.getBoundingClientRect();
+    const beadHeight = e.target.offsetHeight;
+    const minDistance = beadHeight + 5;
 
-    let newPosition = e.clientY - rodRect.top - e.target.offsetHeight / 2;
+    let newPosition = e.clientY - rodRect.top - beadHeight / 2;
 
-    // bead are within the rod boundaries
+    //the bead are within the rod boundaries
     newPosition = Math.max(newPosition, 0);
-    newPosition = Math.min(
-      newPosition,
-      rodElement.offsetHeight - e.target.offsetHeight,
-    );
+    newPosition = Math.min(newPosition, rodElement.offsetHeight - beadHeight);
+
+    // beads do not overlap
+    for (let i = 0; i < positions.length; i++) {
+      if (i !== index) {
+        if (Math.abs(newPosition - positions[i]) < minDistance) {
+          if (newPosition > positions[i]) {
+            newPosition = positions[i] + minDistance;
+          } else {
+            newPosition = positions[i] - minDistance;
+          }
+        }
+      }
+    }
 
     const newPositions = [...positions];
     newPositions[index] = newPosition;
@@ -46,12 +58,7 @@ const Rod = ({ beadUrl }) => {
   return (
     <div className="rod">
       {positions.map((pos, index) => (
-        <Bead
-          key={index}
-          position={pos}
-          onMove={(e) => handleMove(index, e)}
-          beadUrl={beadUrl}
-        />
+        <Bead key={index} position={pos} onMove={(e) => handleMove(index, e)} beadUrl={beadUrl} />
       ))}
     </div>
   );
