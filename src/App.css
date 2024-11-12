@@ -27,6 +27,7 @@
 
 body {
   background: var(--bg);
+ /* background: #edf7fa;*/
   color: var(--black);
   min-height: 100vh;
   margin-inline: auto;
@@ -60,50 +61,4 @@ h2 {
   margin-top: 3rem;
   margin-inline: auto;
 }
-
-.abacus {
-  /*width: 200px;*/
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  /*gap: 1rem;*/
-  border: 12px solid var(--brown);
-  border-radius: 10px;
-}
-
-.rod {
-  background: url('./assets/Frame1.png') no-repeat center center;
-  background-size: contain;
-  /*background: green;*/
-  display: flex;
-  flex-direction: column;
-  /*margin: 0px;*/
-  height: 400px;
-  width: 60px;
-  width: 100px;
-  position: relative;
-}
-
-.bead-container {
-  cursor: grab;
-  position: absolute;
-  width: 100%;
-  user-select: none;
-}
-
-.bead {
-  margin-inline: auto;
-  max-width: 60px;
-  /*height: 60px;*/
-  display: block;
-  user-select: none;
-}
 /*.......................................*/
-
-/*@media (max-width: 1000px) {
-  .container {
-    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
-    width: 100%;
-  }
-}*/

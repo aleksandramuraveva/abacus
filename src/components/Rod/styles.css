@@ -1,0 +1,12 @@
+.rod {
+  background: url('../../assets/Frame1.png') no-repeat center center;
+  background-size: contain;
+  /*background: green;*/
+  display: flex;
+  flex-direction: column;
+  /*margin: 0px;*/
+  height: 400px;
+  width: 60px;
+  width: 100px;
+  position: relative;
+}
