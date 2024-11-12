@@ -4,6 +4,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin-top: 2rem;
   /*gap: 1rem;*/
   border: 12px solid var(--brown);
   border-radius: 10px;
