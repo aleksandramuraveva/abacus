@@ -89,7 +89,7 @@ h2 {
   cursor: grab;
   position: absolute;
   width: 100%;
-  
+  user-select: none;
 }
 
 .bead {
@@ -97,6 +97,7 @@ h2 {
   max-width: 60px;
   /*height: 60px;*/
   display: block;
+  user-select: none;
 }
 /*.......................................*/
 
