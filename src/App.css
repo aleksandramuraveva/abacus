@@ -67,7 +67,7 @@ h2 {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  /*gap: 1rem;*/
   border: 12px solid var(--brown);
   border-radius: 10px;
 }
@@ -78,7 +78,7 @@ h2 {
   /*background: green;*/
   display: flex;
   flex-direction: column;
-  margin: 0 10px;
+  /*margin: 0px;*/
   height: 400px;
   width: 60px;
   width: 100px;
