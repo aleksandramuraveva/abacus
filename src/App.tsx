@@ -2,10 +2,9 @@ import { useState } from 'react';
 import './App.css';
 import beadImage from './assets/Bead1.png';
 
-
 const Bead = ({ position, onMove, beadUrl }) => {
   const handleDrag = (e) => {
-    if (e.clientY === 0) return; 
+    if (e.clientY === 0) return;
 
     onMove(e);
   };
@@ -34,7 +33,10 @@ const Rod = ({ beadUrl }) => {
 
     // bead are within the rod boundaries
     newPosition = Math.max(newPosition, 0);
-    newPosition = Math.min(newPosition, rodElement.offsetHeight - e.target.offsetHeight);
+    newPosition = Math.min(
+      newPosition,
+      rodElement.offsetHeight - e.target.offsetHeight,
+    );
 
     const newPositions = [...positions];
     newPositions[index] = newPosition;
@@ -44,7 +46,12 @@ const Rod = ({ beadUrl }) => {
   return (
     <div className="rod">
       {positions.map((pos, index) => (
-        <Bead key={index} position={pos} onMove={(e) => handleMove(index, e)} beadUrl={beadUrl} />
+        <Bead
+          key={index}
+          position={pos}
+          onMove={(e) => handleMove(index, e)}
+          beadUrl={beadUrl}
+        />
       ))}
     </div>
   );

@@ -46,7 +46,6 @@ body {
 }
 */
 
-
 h1 {
   font-size: 1.5rem;
   font-weight: 700;
@@ -75,32 +74,20 @@ h2 {
   flex-direction: column;
   margin: 0 10px;
   height: 200px;
-  width: 60px; 
-  position: relative; 
+  width: 60px;
+  position: relative;
 }
 
 .bead-container {
-  cursor: grab; 
+  cursor: grab;
   position: absolute;
 }
 
 .bead {
-  max-width: 60px; 
+  max-width: 60px;
   /*height: 60px;*/
   display: block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*@media (max-width: 1000px) {
   .container {
