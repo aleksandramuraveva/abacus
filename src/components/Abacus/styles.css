@@ -1,0 +1,10 @@
+.abacus {
+  /*width: 200px;*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /*gap: 1rem;*/
+  border: 12px solid var(--brown);
+  border-radius: 10px;
+}

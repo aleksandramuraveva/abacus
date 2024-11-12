@@ -1,0 +1,13 @@
+.bead-container {
+  cursor: grab;
+  position: absolute;
+  width: 100%;
+  user-select: none;
+}
+
+.bead {
+  margin-inline: auto;
+  max-width: 60px;
+  display: block;
+  user-select: none;
+}
