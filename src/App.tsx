@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import beadImage from './assets/Bead1.png';
+import rodImage from './assets/Frame1.png'
 
 const Bead = ({ position, onMove, beadUrl }) => {
   const handleDrag = (e) => {
@@ -22,8 +23,19 @@ const Bead = ({ position, onMove, beadUrl }) => {
   );
 };
 
-const Rod = ({ beadUrl }) => {
-  const [positions, setPositions] = useState([0, 40, 80, 120, 160]);
+const Rod = ({ beadUrl, rodUrl }) => {
+  const rodHeight = 400; 
+  const beadHeight = 60; 
+  const edgeMargin = beadHeight * 0.26; 
+
+  
+  const [positions, setPositions] = useState([
+    rodHeight - beadHeight + edgeMargin,
+    rodHeight - beadHeight * 1.5 + edgeMargin,
+    rodHeight - beadHeight * 2 + edgeMargin,
+    rodHeight - beadHeight * 2.5 + edgeMargin,
+    edgeMargin, 
+  ]);
 
   const handleMove = (index, e) => {
     const rodElement = e.target.closest('.rod');
@@ -34,10 +46,10 @@ const Rod = ({ beadUrl }) => {
     let newPosition = e.clientY - rodRect.top - beadHeight / 2;
 
     //the bead are within the rod boundaries
-    newPosition = Math.max(newPosition, 0);
-    newPosition = Math.min(newPosition, rodElement.offsetHeight - beadHeight);
+    newPosition = Math.max(newPosition, edgeMargin);
+    newPosition = Math.min(newPosition, rodElement.offsetHeight - beadHeight - edgeMargin);
 
-    // beads do not overlap
+     // beads do not overlap
     for (let i = 0; i < positions.length; i++) {
       if (i !== index) {
         if (Math.abs(newPosition - positions[i]) < minDistance) {
@@ -58,28 +70,41 @@ const Rod = ({ beadUrl }) => {
   return (
     <div className="rod">
       {positions.map((pos, index) => (
-        <Bead key={index} position={pos} onMove={(e) => handleMove(index, e)} beadUrl={beadUrl} />
+        <div
+          key={index}
+          className="bead-container"
+          style={{ top: `${pos}px`, position: 'absolute' }}
+          draggable
+          onDrag={(e) => handleMove(index, e)}
+          onDragEnd={(e) => handleMove(index, e)}
+        >
+          <img src={beadUrl} alt="Bead" className="bead" />
+        </div>
       ))}
     </div>
   );
 };
 
-const Abacus = ({ beadUrl }) => {
+
+
+
+const Abacus = ({ beadUrl, rodUrl }) => {
   return (
     <div className="abacus">
-      <Rod beadUrl={beadUrl} />
-      <Rod beadUrl={beadUrl} />
-      <Rod beadUrl={beadUrl} />
+      <Rod beadUrl={beadUrl} rodUrl={rodUrl}/>
+      <Rod beadUrl={beadUrl} rodUrl={rodUrl}/>
+      <Rod beadUrl={beadUrl} rodUrl={rodUrl}/>
     </div>
   );
 };
 
 const App = () => {
-  const beadUrl = beadImage; // Use the imported image
+  const beadUrl = beadImage;
+  const rodUrl = rodImage;
 
   return (
     <div className="App">
-      <Abacus beadUrl={beadUrl} />
+      <Abacus beadUrl={beadUrl} rodUrl={rodUrl} />
     </div>
   );
 };

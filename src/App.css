@@ -62,29 +62,38 @@ h2 {
 }
 
 .abacus {
+  /*width: 200px;*/
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  border: 12px solid var(--brown);
+  border-radius: 10px;
 }
 
 .rod {
-  background: green;
+  background: url('./assets/Frame1.png') no-repeat center center;
+  background-size: contain;
+  /*background: green;*/
   display: flex;
   flex-direction: column;
   margin: 0 10px;
-  height: 200px;
+  height: 400px;
   width: 60px;
+  width: 100px;
   position: relative;
 }
 
 .bead-container {
   cursor: grab;
   position: absolute;
+  width: 100%;
+  
 }
 
 .bead {
+  margin-inline: auto;
   max-width: 60px;
   /*height: 60px;*/
   display: block;
