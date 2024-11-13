@@ -1,8 +1,12 @@
 .theme-button {
-  background-color: #ffafcc;
-  border: none;
-  color: var(--other-text);
-  font-weight: 600;
+/*  background-color: #ffafcc;
+  background-color: #ff006e;
+  background-color: #6c4675;
+  background-color: #601b60;*/
+/*  background-color: #122569;*/
+  border: 2px dashed #601b60;
+  color: #601b60;
+  font-weight: 400;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -10,12 +14,12 @@
   font-size: 16px;
   margin: 10px 2px;
   cursor: pointer;
-  border-radius: 12px;
+  border-radius: 10px;
   transition: background-color 0.3s ease, transform 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .theme-button:hover {
-  opacity: 90%;
+  opacity: 95%;
   transform: translateY(-2px);
 }

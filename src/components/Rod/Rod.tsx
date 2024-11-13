@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react'; 
+import { AbacusContext } from '../../contexts/AbacusContext';
 import Bead from '../../components/Bead/Bead';
 import './styles.css';
 
-const Rod = ({ beadUrl, rodUrl }) => {
+const Rod = () => {
+  const { rodUrl } = useContext(AbacusContext);
   const rodHeight = 400; 
   const beadHeight = 60; 
   const edgeMargin = beadHeight * 0.26; 
@@ -51,13 +53,12 @@ const Rod = ({ beadUrl, rodUrl }) => {
   };
 
   return (
-    <div className="rod">
+    <div className="rod" style={{ backgroundImage: `url(${rodUrl})` }}>
       {positions.map((pos, index) => (
         <Bead
           key={index}
           position={pos}
           onMove={(e) => handleMove(index, e)}
-          beadUrl={beadUrl}
         />
       ))}
     </div>

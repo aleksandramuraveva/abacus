@@ -7,12 +7,13 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /*#692212 #838383  #533010 #40dbcf*/
+  /*#692212 #838383  #533010 #40dbcf ;*/
   --primary: #40dbcf;
-  --secondary: #533010;
+  --secondary: #300211;
   --brown: #692212;
   --grey: #838383;
   --bg: #edf7fa;
+  --pink: #ffafcc77;
   --black: #000;
   --other-text: #fff;
   --red: #ff0000;

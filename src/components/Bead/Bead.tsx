@@ -1,6 +1,11 @@
+import {useContext} from 'react';
+import { AbacusContext } from '../../contexts/AbacusContext';
 import './styles.css';
 
-const Bead = ({ position, onMove, beadUrl }) => {
+const Bead = ({ position, onMove }) => {
+
+  const { beadUrl } = useContext(AbacusContext);
+
   const handleDrag = (e) => {
     if (e.clientY === 0) return; 
 
