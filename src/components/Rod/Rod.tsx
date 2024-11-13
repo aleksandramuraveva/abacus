@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'; 
+import { useContext, useState, memo } from 'react'; 
 import { AbacusContext } from '../../contexts/AbacusContext';
 import Bead from '../../components/Bead/Bead';
 import './styles.css';
@@ -65,5 +65,4 @@ const Rod = () => {
   );
 };
 
-
-export default Rod;
+export default memo(Rod);

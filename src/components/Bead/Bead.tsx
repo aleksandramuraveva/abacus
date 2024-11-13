@@ -1,9 +1,8 @@
-import {useContext} from 'react';
+import { useContext, memo } from 'react';
 import { AbacusContext } from '../../contexts/AbacusContext';
 import './styles.css';
 
 const Bead = ({ position, onMove }) => {
-
   const { beadUrl } = useContext(AbacusContext);
 
   const handleDrag = (e) => {
@@ -25,5 +24,4 @@ const Bead = ({ position, onMove }) => {
   );
 };
 
-
-export default Bead;
+export default memo(Bead);
