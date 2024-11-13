@@ -1,50 +1,52 @@
-# React + TypeScript + Vite
+# Abacus
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Abacus is an interactive web application that simulates the classic abacus tool for calculations. It provides users with a hands-on experience of manipulating beads to perform arithmetic operations, making it both educational and engaging.
 
-Currently, two official plugins are available:
+## Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can access the deployed application at: - [Abacus live](https://abacus-am.web.app/)
 
-## Expanding the ESLint configuration
+## Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+## Screenshots
+
+Here are some screenshots of the application in action:
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/7ea495ae-f0d3-47d2-aebb-c99ebc9744fc" alt="" width="700" />
+  <br>
+  <br>
+  <img src="https://github.com/user-attachments/assets/a50a6daf-40c7-455d-9625-2eea553df132" alt="" width="700"/>
+  <img src="" alt="" width="500"/>
+</div>
+
+## Features
+
+- **User-Friendly Interface**: Intuitive design that mimics a traditional abacus.
+- **Dynamic Interaction**: Users can drag beads to different positions, replicating the physical abacus experience.
+- **Customizable Themes**: Easily switch between different themes using the Context API to personalize the look and feel.
+- **Adjustable Rod Count**: Users can choose the number of rods to customize their abacus experience.
+
+### How to run locally
+
+1. Clone the repo
+
+```sh
+  git clone https://github.com/aleksandramuraveva/abacus.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. Install NPM packages
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+```sh
+  npm install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
+3. Start project
+
+```sh
+  npm run dev
 ```
