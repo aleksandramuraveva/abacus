@@ -1,69 +1,21 @@
-/*#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}*/
 #root {
   width: 100%;
   display: flex;
 }
 
-/*.light {
-  --primary: #9352e6;
-  --secondary: lavender;
-  --bg: #333;
-  --main-text: #000;
-  --other-text: #fff;
-}
-
-.dark {
-  --primary: #333;
-  --secondary: #9352e6;
-  --bg: #777;
-  --main-text: #fff;
-  --other-text: #fff;
-}*/
-
 body {
   background: var(--bg);
- /* background: #edf7fa;*/
   color: var(--black);
   min-height: 100vh;
   margin-inline: auto;
-}
-
-/*.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.header {
-  width: 100%;
-  padding: 3rem;
-  min-height: 45vh;
-  text-align: center;
-  background-color: var(--primary);
-}
-*/
-
-h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-h2 {
-  font-weight: 600;
 }
 
 button {
   cursor: pointer;
   user-select: none;
 }
-/*.............................*/
 
 .App {
   margin-top: 1.5rem;
   margin-inline: auto;
 }
-/*.......................................*/

@@ -11,7 +11,7 @@ const Bead: React.FC<BeadProps> = ({ position, onMove }) => {
   const { beadUrl } = useContext(AbacusContext);
 
   const handleDrag = (e: React.DragEvent<HTMLDivElement>) => {
-    if (e.clientY === 0) return; 
+    if (e.clientY === 0) return;
 
     onMove(e);
   };

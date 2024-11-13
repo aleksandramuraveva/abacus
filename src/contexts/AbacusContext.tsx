@@ -24,22 +24,30 @@ const defaultContext: AbacusContextType = {
   rodUrl: '',
   backgroundColor: '',
   borderColor: '',
-  changeTheme: () => {}
+  changeTheme: () => {},
 };
-
 
 interface AbacusProviderProps {
   children: React.ReactNode;
 }
 
-
 export const AbacusContext = createContext<AbacusContextType>(defaultContext);
 
-export const AbacusProvider = ({ children } : AbacusProviderProps) => {
+export const AbacusProvider = ({ children }: AbacusProviderProps) => {
   const [theme, setTheme] = useState('theme1');
   const themes: Themes = {
-    theme1: { beadUrl: bead2, rodUrl: frame2, backgroundColor: 'var(--pink)', borderColor: 'var(--primary)' },
-    theme2: { beadUrl: bead1, rodUrl: frame1, backgroundColor: 'var(--secondary)', borderColor: 'var(--brown)' },
+    theme1: {
+      beadUrl: bead2,
+      rodUrl: frame2,
+      backgroundColor: 'var(--pink)',
+      borderColor: 'var(--primary)',
+    },
+    theme2: {
+      beadUrl: bead1,
+      rodUrl: frame1,
+      backgroundColor: 'var(--secondary)',
+      borderColor: 'var(--brown)',
+    },
   };
 
   const changeTheme = () => {

@@ -4,7 +4,7 @@ import Rod from '../../components/Rod/Rod';
 import './styles.css';
 
 interface AbacusProps {
-	rodCount: number;
+  rodCount: number;
 }
 
 const Abacus: React.FC<AbacusProps> = ({ rodCount }) => {
