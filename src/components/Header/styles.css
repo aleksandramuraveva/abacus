@@ -7,13 +7,8 @@
 }
 
 .theme-button {
-/*  background-color: #ffafcc;
-  background-color: #ff006e;
-  background-color: #6c4675;
-  background-color: #601b60;*/
-/*  background-color: #122569;*/
-  border: 2px dashed #601b60;
-  color: #601b60;
+  border: 2px dashed var(--prune);
+  color: var(--prune);
   font-weight: 400;
   padding: 10px 20px;
   text-align: center;
@@ -35,8 +30,8 @@
 
 .rod-count-input { 
   max-width: 145px;
-  border: 2px dashed #601b60; 
-  color: #601b60; 
+  border: 2px dashed var(--prune); 
+  color: var(--prune); 
   font-weight: 400; 
   padding: 10px 0;
   text-align: center; 
