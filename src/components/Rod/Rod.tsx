@@ -1,21 +1,21 @@
-import { useContext, useState, memo } from 'react'; 
+import { useContext, useState, memo } from 'react';
 import { AbacusContext } from '../../contexts/AbacusContext';
 import Bead from '../../components/Bead/Bead';
 import './styles.css';
 
 const Rod: React.FC = () => {
   const { rodUrl } = useContext(AbacusContext);
-  const rodHeight = 400; 
-  const beadHeight = 60; 
-  const edgeMargin = beadHeight * 0.26; 
-  const bridgePosition = rodHeight / 3.2; 
+  const rodHeight = 400;
+  const beadHeight = 60;
+  const edgeMargin = beadHeight * 0.26;
+  const bridgePosition = rodHeight / 3.2;
 
   const [positions, setPositions] = useState([
-    rodHeight - beadHeight + edgeMargin, 
-    rodHeight - beadHeight * 1.5 + edgeMargin, 
-    rodHeight - beadHeight * 2 + edgeMargin, 
-    rodHeight - beadHeight * 2.5 + edgeMargin, 
-    edgeMargin, 
+    rodHeight - beadHeight + edgeMargin,
+    rodHeight - beadHeight * 1.5 + edgeMargin,
+    rodHeight - beadHeight * 2 + edgeMargin,
+    rodHeight - beadHeight * 2.5 + edgeMargin,
+    edgeMargin,
   ]);
 
   const handleMove = (index: number, e: React.DragEvent<HTMLDivElement>) => {
@@ -35,7 +35,10 @@ const Rod: React.FC = () => {
     }
 
     newPosition = Math.max(newPosition, edgeMargin);
-    newPosition = Math.min(newPosition, rodElement.offsetHeight - beadHeight - edgeMargin);
+    newPosition = Math.min(
+      newPosition,
+      rodElement.offsetHeight - beadHeight - edgeMargin,
+    );
 
     for (let i = 0; i < positions.length; i++) {
       if (i !== index) {
@@ -57,11 +60,7 @@ const Rod: React.FC = () => {
   return (
     <div className="rod" style={{ backgroundImage: `url(${rodUrl})` }}>
       {positions.map((pos, index) => (
-        <Bead
-          key={index}
-          position={pos}
-          onMove={(e) => handleMove(index, e)}
-        />
+        <Bead key={index} position={pos} onMove={(e) => handleMove(index, e)} />
       ))}
     </div>
   );

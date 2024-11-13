@@ -13,7 +13,7 @@ const App = () => {
       <div className="App">
         <Header rodCount={rodCount} setRodCount={setRodCount} />
         <Abacus rodCount={rodCount} />
-        <Footer/>
+        <Footer />
       </div>
     </AbacusProvider>
   );
