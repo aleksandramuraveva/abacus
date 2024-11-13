@@ -1,14 +1,19 @@
+import { useContext } from 'react';
+import { AbacusContext } from '../../contexts/AbacusContext';
 import Rod from '../../components/Rod/Rod';
 import './styles.css';
 
-const Abacus = ({ beadUrl, rodUrl }) => {
+const Abacus = () => {
+  const { backgroundColor, borderColor } = useContext(AbacusContext);
+
   return (
-    <div className="abacus">
-      <Rod beadUrl={beadUrl} rodUrl={rodUrl}/>
-      <Rod beadUrl={beadUrl} rodUrl={rodUrl}/>
-      <Rod beadUrl={beadUrl} rodUrl={rodUrl}/>
+    <div className="abacus" style={{ backgroundColor, borderColor }}>
+      <Rod />
+      <Rod />
+      <Rod />
     </div>
   );
 };
 
 export default Abacus;
+
