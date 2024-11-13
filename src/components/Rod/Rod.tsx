@@ -3,7 +3,7 @@ import { AbacusContext } from '../../contexts/AbacusContext';
 import Bead from '../../components/Bead/Bead';
 import './styles.css';
 
-const Rod = () => {
+const Rod: React.FC = () => {
   const { rodUrl } = useContext(AbacusContext);
   const rodHeight = 400; 
   const beadHeight = 60; 
@@ -18,10 +18,12 @@ const Rod = () => {
     edgeMargin, 
   ]);
 
-  const handleMove = (index, e) => {
-    const rodElement = e.target.closest('.rod');
+  const handleMove = (index: number, e: React.DragEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLDivElement;
+    const rodElement = target.closest('.rod') as HTMLDivElement;
+    if (!rodElement) return;
     const rodRect = rodElement.getBoundingClientRect();
-    const beadHeight = e.target.offsetHeight;
+    const beadHeight = target.offsetHeight;
     const minDistance = beadHeight + 2;
 
     let newPosition = e.clientY - rodRect.top - beadHeight / 2;
