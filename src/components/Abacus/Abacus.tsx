@@ -3,7 +3,11 @@ import { AbacusContext } from '../../contexts/AbacusContext';
 import Rod from '../../components/Rod/Rod';
 import './styles.css';
 
-const Abacus = ({ rodCount }) => {
+interface AbacusProps {
+	rodCount: number;
+}
+
+const Abacus: React.FC<AbacusProps> = ({ rodCount }) => {
   const { backgroundColor, borderColor } = useContext(AbacusContext);
 
   return (

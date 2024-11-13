@@ -2,10 +2,15 @@ import { useContext, memo } from 'react';
 import { AbacusContext } from '../../contexts/AbacusContext';
 import './styles.css';
 
-const Bead = ({ position, onMove }) => {
+interface BeadProps {
+  position: number;
+  onMove: (e: React.DragEvent<HTMLDivElement>) => void;
+}
+
+const Bead: React.FC<BeadProps> = ({ position, onMove }) => {
   const { beadUrl } = useContext(AbacusContext);
 
-  const handleDrag = (e) => {
+  const handleDrag = (e: React.DragEvent<HTMLDivElement>) => {
     if (e.clientY === 0) return; 
 
     onMove(e);

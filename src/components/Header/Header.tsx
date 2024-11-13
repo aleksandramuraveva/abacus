@@ -1,11 +1,16 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { AbacusContext } from '../../contexts/AbacusContext';
 import './styles.css';
 
-const Header = ({rodCount, setRodCount}) => {
+interface HeaderProps {
+  rodCount: number;
+  setRodCount: (e: number) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({rodCount, setRodCount}) => {
   const { changeTheme } = useContext(AbacusContext);  
 
-  const handleRodCountChange = (e) => {
+  const handleRodCountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRodCount(Number(e.target.value));
   };
 
