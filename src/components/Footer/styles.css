@@ -1,0 +1,25 @@
+.footer {
+  color: var(--grey);
+  padding: 0.5rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-link {
+  color: var(--grey);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-link:hover {
+  color: var(--prune);
+  opacity: 0.8;
+}
+
+.footer-text {
+  margin-left: 0.25rem; /* Equivalent to 'ml-1' */
+}
