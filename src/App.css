@@ -10,12 +10,20 @@ body {
   margin-inline: auto;
 }
 
+main {
+  flex: 1;
+}
+
 button {
   cursor: pointer;
   user-select: none;
 }
 
 .App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   margin-top: 1.5rem;
   margin-inline: auto;
 }
+

@@ -11,8 +11,10 @@ const App = () => {
   return (
     <AbacusProvider>
       <div className="App">
-        <Header rodCount={rodCount} setRodCount={setRodCount} />
-        <Abacus rodCount={rodCount} />
+        <main>
+          <Header rodCount={rodCount} setRodCount={setRodCount} />
+          <Abacus rodCount={rodCount} />
+        </main>
         <Footer />
       </div>
     </AbacusProvider>
